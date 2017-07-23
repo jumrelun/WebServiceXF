@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:WebServices_XF.ViewModels;assembly=WebServices_XF"
+             x:Class="WebServices_XF.Views.WeatherDetailPage"
+             BackgroundColor="Aqua">
+    <ContentPage.BindingContext>
+        <viewModels:WeatherViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="30" Orientation="Vertical">
+            <Label Text="Información del Tiempo" HorizontalOptions="Center" FontAttributes="Bold"/>
+            <Label Text="Ciudad" TextColor="Black" Margin="0,50,0,0" FontSize="16"/>
+            <Picker x:Name="PickerCity" HorizontalOptions="FillAndExpand">
+                <Picker.Items>
+                    <x:String>Bogotá</x:String>
+                    <x:String>Quito</x:String>
+                    <x:String>Lima</x:String>
+                </Picker.Items>
+            </Picker>
+            <Button Text="Buscar" Clicked="Button_OnClicked"/>
+            <Label Text="Temperatura"/>
+            <Entry Text="{Binding Temperature}"/>
+            <Label Text="Presión"/>
+            <Entry Text="{Binding Pressure}"/>
+            <Label Text="Humedad"/>
+            <Entry Text="{Binding Humidity}"/>
+            <ActivityIndicator IsRunning="{Binding IsBusy}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
