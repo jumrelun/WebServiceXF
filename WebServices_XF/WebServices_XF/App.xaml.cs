@@ -11,6 +11,7 @@ namespace WebServices_XF
     {
         public static string API_KEY = "f0259f5f3c5d18527d64dea308033f2b";
         public static string API_URL = "http://api.openweathermap.org/data/2.5/weather";
+        public static string API_URLBASE = "{YOUR_API_BASE_URL}";
 
         public App()
         {
